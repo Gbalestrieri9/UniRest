@@ -1,0 +1,29 @@
+version: '3.9'
+services:
+  unirest-mysql:
+    image: mysql:8.0
+    container_name: unirest-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: theR0ot!
+      MYSQL_DATABASE: unirest
+      MYSQL_USER: unirest
+      MYSQL_PASSWORD: unirest
+    volumes:
+      - ./sql_scripts/schema.sql:/docker-entrypoint-initdb.d/1_schema.sql
+      - ./sql_scripts/data.sql:/docker-entrypoint-initdb.d/2_data.sql
+    ports:
+      - "3306:3306"
+
+  unirest-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: unirest-app
+    depends_on:
+      - unirest-mysql
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: "jdbc:mysql://unirest-mysql:3306/unirest?useSSL=false&allowPublicKeyRetrieval=true"
+      SPRING_DATASOURCE_USERNAME: "unirest"
+      SPRING_DATASOURCE_PASSWORD: "unirest"
