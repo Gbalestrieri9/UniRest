@@ -1,0 +1,243 @@
+type: collection.insomnia.rest/5.0
+name: UniRest
+meta:
+  id: wrk_581fa630df4c4c91b4317010ba810bcf
+  created: 1742693438599
+  modified: 1742693438599
+collection:
+  - url: http://localhost:8080/api/restaurantes
+    name: Criar Restaurante
+    meta:
+      id: req_5377125a127248d4a8b4df5121082a40
+      created: 1742693461239
+      modified: 1742849684618
+      isPrivate: false
+      sortKey: -1742693461239
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Restaurante Andalo",
+          "endereco": "Rua das laranja, 123",
+          "tipoCozinha": "japonesa",
+          "horarioFuncionamento": "08:00 - 22:00"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_ec4a19afb3a84f12bec18885c815a6a3
+      - name: User-Agent
+        value: insomnia/10.3.0
+        id: pair_6a8b50212976401496fd359833ae5813
+      - id: pair_9a47f6d8a3a14a8588637820fa454c63
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKb8OjbyBEb25vbyIsInVzZXJJZCI6Miwicm9sZSI6IkRPTk8iLCJpYXQiOjE3NDI4NDk2NjgsImV4cCI6MTc0MjkzNjA2OH0.emFLkO8qziAIQkJ70UxunBa8U6QkB_PYPBQeIwz5f68
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/restaurantes
+    name: listar Restaurantes
+    meta:
+      id: req_ca9193c520fb49a98a02778166f761d7
+      created: 1742693897807
+      modified: 1742693912678
+      isPrivate: false
+      sortKey: -1742693897807
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/10.3.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/usuarios
+    name: Criar Usuario
+    meta:
+      id: req_c565f4e2ce664e4490e5971275ad43dc
+      created: 1742757706415
+      modified: 1742821430360
+      isPrivate: false
+      sortKey: -1742757706415
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "sggt da Silva",
+          "email": "Adalton@example.com",
+          "senha": "123456"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.0.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/users/login
+    name: Login token
+    meta:
+      id: req_b3fd11b6f26e49cd8626939bbf5f30f2
+      created: 1742763393414
+      modified: 1742843381605
+      isPrivate: false
+      sortKey: -1742763393414
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "email": "donoo1@example.com",
+          "password": "senha123"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.0.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/donos
+    name: Criar dono
+    meta:
+      id: req_a1f25f18fd2a4df6be1eb5994331cebb
+      created: 1742781194125
+      modified: 1742826504860
+      isPrivate: false
+      sortKey: -1742760549914.5
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "João Donoo",
+          "email": "donoo1@example.com",
+          "senha": "senha123"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_6fc2c51ea4c648f48b00c2c69ed76d51
+      - name: User-Agent
+        value: insomnia/11.0.0
+        id: pair_69b4cafcd3ba4da79ccba4b27537ff39
+      - id: pair_a17171198ae647968ed498aba11600c8
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBZG1pbmlzdHJhZG9yIiwidXNlcklkIjozLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NDI4MjY0ODksImV4cCI6MTc0MjkxMjg4OX0.UmQ9W5bQvSW1VSv5KfBXThxDPMQ7oqA0peTFzvOQieA
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/restaurantes/2/cardapio-itens
+    name: adiciona item cardapio
+    meta:
+      id: req_702a38674d7d42cf8a23bf98a5679db5
+      created: 1742837020325
+      modified: 1742865980487
+      isPrivate: false
+      sortKey: -1742837020325
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "hot dog",
+          "descricao": "dogao com molho de tomate e mussarela",
+          "preco": 50.00,
+          "disponivelSomenteLocal": true,
+          "fotoPath": "/imagens/pizza_mussarela.jpg"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_95d0c4680c6d4b2fb8f5afb7df2429ba
+      - name: User-Agent
+        value: insomnia/11.0.0
+        id: pair_620e2dc6cecf4466b6247f6d80ed90f7
+      - id: pair_b23d747d1e694573922c66de68dedec3
+        name: Authorization
+        value: Bearer
+          eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKb8OjbyBEb25vbyIsInVzZXJJZCI6Miwicm9sZSI6IkRPTk8iLCJpYXQiOjE3NDI4NDk2NjgsImV4cCI6MTc0MjkzNjA2OH0.emFLkO8qziAIQkJ70UxunBa8U6QkB_PYPBQeIwz5f68
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/api/restaurantes/2/cardapio-itens
+    name: Visualizar cardapio
+    meta:
+      id: req_e31dcabcd106412e83e4653b9b6ed67d
+      created: 1742853259361
+      modified: 1742854025510
+      isPrivate: false
+      sortKey: -1742853259361
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.0.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_95074c00252971933c9c59cef0ecef15825d440f
+    created: 1742693438632
+    modified: 1742853268401
+  cookies:
+    - key: JSESSIONID
+      value: 1E38853DDA8717182744AD5A22C880A5
+      domain: localhost
+      path: /
+      httpOnly: true
+      hostOnly: true
+      creation: 2025-03-23T21:21:06.545Z
+      lastAccessed: 2025-03-24T21:54:28.399Z
+      id: 39627798-be4b-4693-81b1-c0323482d743
+environments:
+  name: Base Environment
+  meta:
+    id: env_95074c00252971933c9c59cef0ecef15825d440f
+    created: 1742693438614
+    modified: 1742693438614
+    isPrivate: false
